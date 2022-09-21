@@ -10,4 +10,4 @@
 * Space complexity is *O(1)* since we are only utilizing some pointers.
 
 ## Other
-* Can solve recursively to minimize the code.
+* Can solve recursively to minimize the code. This will affect the space complexity in terms of the stack frames, however.
