@@ -29,10 +29,7 @@ class Solution {
         
         newListPointer = ans;
         
-        int count = 0;
-        
         while (list1 != null || list2 != null) {
-            count++;
             if (list1 == null) {
                 newListPointer.next = list2;
                 break;
@@ -50,7 +47,6 @@ class Solution {
             }
             newListPointer = newListPointer.next;
         }
-        System.out.println(count);
         return ans;
     }
 }
