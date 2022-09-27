@@ -8,4 +8,4 @@
 * Space complexity is *O(1)*
 
 ### Extra notes
-$`\sqrt{2}`$
+$ `\sqrt{2}` $
