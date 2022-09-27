@@ -8,4 +8,6 @@
 * Space complexity is *O(1)*
 
 ### Extra notes
-$ `\sqrt{2}` $
+```math
+SE = \frac{\sigma}{\sqrt{n}}
+```
