@@ -8,4 +8,4 @@
 * Space complexity is *O(1)*
 
 ### Extra notes
-$\sqrt{3x-1}+(1+x)^2$
+$\frac{left + right}{2} = left + \frac{right - left}{2}$
