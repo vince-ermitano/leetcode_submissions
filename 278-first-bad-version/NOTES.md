@@ -8,6 +8,4 @@
 * Space complexity is *O(1)*
 
 ### Extra notes
-```math
-$$ SE = \frac{\sigma}{\sqrt{n}} $$
-```
+$\sqrt{3x-1}+(1+x)^2$
