@@ -1,21 +1,19 @@
 class Solution {
     public boolean isPalindrome(int x) {
-        if (x < 0) {
+        if (x < 0 || x % 10 == 0 && x != 0) {
             return false;
         }
-        String str = String.valueOf(x);
-        char[] arr = str.toCharArray();
         
-        int left = 0;
-        int right = str.length()-1;
+        int reversedHalf = 0;
         
-        while (left < right) {
-            if (arr[left] != arr[right]) {
-                return false;
-            }
-            left++;
-            right--;
+        while (x > reversedHalf) {
+            reversedHalf = reversedHalf * 10 + x % 10;
+            x /= 10;
         }
-        return true;
+        
+        if (x == reversedHalf || x == reversedHalf / 10) {
+            return true;
+        }
+        return false;
     }
 }
