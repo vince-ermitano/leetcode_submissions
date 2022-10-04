@@ -8,4 +8,4 @@
 
 ## Complexity
 * Time complexity is *O(r * c)* (two passes of the matrix)
-* Space complexity is *O(r * c)* to hold the dp matrix.
+* Space complexity is *O(1)* since the dp matrix is the output.
