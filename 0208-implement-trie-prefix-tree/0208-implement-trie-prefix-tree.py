@@ -10,12 +10,9 @@ class Trie(object):
         :rtype: None
         """
         current_node = self.root
-        print(type(current_node))
         
         for i in range(0, len(word)):
-            curr_char = word[i]
-            print(curr_char)
-            if current_node.contains_next_char(curr_char) == False:
+            if current_node.contains_next_char(word[i]) == False:
                 current_node.put(word[i])
             current_node = current_node.get(word[i])
             
