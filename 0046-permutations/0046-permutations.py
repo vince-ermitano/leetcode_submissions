@@ -9,7 +9,7 @@ class Solution(object):
         
         def backtrack(first):
             if first == n:
-                permutations.append(nums[:])
+                permutations.append(list(nums))
             for i in range(first, n):
                 temp = nums[first]
                 nums[first] = nums[i]
