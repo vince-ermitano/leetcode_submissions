@@ -6,5 +6,5 @@
 * Keep unused numbers on the right of the array
 
 ## Complexity
-* Time complexity is *O(N * N!)
-* Space complexity is *O(N!) to store the solutions
+* Time complexity is *O(N * N!)*
+* Space complexity is *O(N!)* to store the solutions
