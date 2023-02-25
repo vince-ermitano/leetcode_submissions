@@ -1,26 +1,22 @@
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        seen = [[] for i in range(len(nums)+1)]
+        # bucket sort
         
+        seen = [[] for i in range(len(nums)+1)]
         counts = defaultdict(int)
         
         for i in range(len(nums)):
             counts[nums[i]] += 1
-            
-        print(counts)
         
         for key in counts.keys():
             seen[counts[key]].append(key)
             
-        print(seen)
-            
         collected = 0
-        
         ans = []
         
         
         for i in range(len(seen)-1, -1, -1):
-            print(i)
+
             if (collected < k):
                 if len(seen[i]) == 0:
                     continue
@@ -37,6 +33,8 @@ class Solution:
                         ans.append(added)
                     
                     collected += k - collected
+            else:
+                break
         
         return ans
                         
