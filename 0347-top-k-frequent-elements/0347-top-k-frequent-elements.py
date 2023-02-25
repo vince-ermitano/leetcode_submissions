@@ -22,14 +22,12 @@ class Solution:
                     continue
                 elif len(seen[i]) + collected <= k:
                     for num in seen[i]:
-                        print(num)
                         ans.append(num)
                     
                     collected += len(seen[i])
                 else:
                     for j in range(k-collected):
                         added = seen[i].pop()
-                        print(added)
                         ans.append(added)
                     
                     collected += k - collected
