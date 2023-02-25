@@ -8,32 +8,17 @@ class Solution:
         for i in range(len(nums)):
             counts[nums[i]] += 1
         
-        for key in counts.keys():
-            seen[counts[key]].append(key)
+        for num, count in counts.items():
+            seen[count].append(num)
             
-        collected = 0
         ans = []
         
         
-        for i in range(len(seen)-1, -1, -1):
-
-            if (collected < k):
-                if len(seen[i]) == 0:
-                    continue
-                elif len(seen[i]) + collected <= k:
-                    for num in seen[i]:
-                        ans.append(num)
-                    
-                    collected += len(seen[i])
-                else:
-                    for j in range(k-collected):
-                        added = seen[i].pop()
-                        ans.append(added)
-                    
-                    collected += k - collected
-            else:
-                break
-        
-        return ans
+        for i in range(len(seen)-1, 0, -1):
+            for num in seen[i]:
+                ans.append(num)
+                
+                if len(ans) == k:
+                    return ans
                         
         
