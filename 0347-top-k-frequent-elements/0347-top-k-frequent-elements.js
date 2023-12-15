@@ -17,12 +17,10 @@ var topKFrequent = function(nums, k) {
     }
 
     for (let i = bucket.length - 1; i >= 0; i--) {
-        while (ans.length < k && bucket[i].length) {
+        while (bucket[i].length > 0) {
             ans.push(bucket[i].pop());
+            
+            if (ans.length === k) return ans;
         }
-        
-        if (ans.length === k) break;
     }
-    
-    return ans;
-};
+}
