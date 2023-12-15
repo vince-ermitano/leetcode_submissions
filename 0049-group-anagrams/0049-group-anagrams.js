@@ -12,8 +12,6 @@ var groupAnagrams = function(strs) {
             counts[char.charCodeAt(0) - 97] += 1
         }
         
-        // const key = counts.join(',');
-        
         if (!groups[counts]) {
             groups[counts] = [];
         }
