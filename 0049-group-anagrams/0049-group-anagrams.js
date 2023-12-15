@@ -12,10 +12,12 @@ var groupAnagrams = function(strs) {
             counts[char.charCodeAt(0) - 97] += 1
         }
         
-        if (!groups[counts]) {
-            groups[counts] = [];
+        const key = counts.join(',');
+        
+        if (!groups[key]) {
+            groups[key] = [];
         }
-        groups[counts].push(str);
+        groups[key].push(str);
     });
     
     return Object.values(groups);
