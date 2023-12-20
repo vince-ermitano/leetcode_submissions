@@ -23,7 +23,5 @@ var carFleet = function(target, position, speed) {
         }
     }
     
-    console.log(stack);
-    
     return stack.length;
 };
