@@ -8,11 +8,8 @@ var jump = function(nums) {
     
     for (let i = nums.length - 2; i >= 0; i--) {
         
-        for (let j = i + 1; j <= nums[i] + i; j++) {
-            
-            if (j >= nums.length) break;
-            
-            dp[i] = Math.min(dp[i], 1 + dp[j]);
+        for (let j = 1; j <= nums[i]; j++) {
+            dp[i] = Math.min(dp[i], 1 + dp[Math.min(nums.length-1, i + j)])
         }
     }
     
