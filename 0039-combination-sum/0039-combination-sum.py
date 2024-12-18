@@ -5,20 +5,23 @@ class Solution(object):
         :type target: int
         :rtype: List[List[int]]
         """
-        ans = []
+        res = []
         
-        def backtrack(target, curr_combination, start_index):
-            if (target == 0):
-                ans.append(list(curr_combination))
-                
-            elif (target < 0):
+        def backtrack(i, cur, total):
+            if total == target:
+                res.append(cur[:])
                 return
             
-            for i in range(start_index, len(candidates)):
-                curr_combination.append(candidates[i])
-                backtrack(target - candidates[i], curr_combination, i)
-                curr_combination.pop()
-                
-        backtrack(target, [], 0)
-        return ans
+            if total > target or i >= len(candidates):
+                return
+            
+            cur.append(candidates[i])
+            backtrack(i, cur, total + candidates[i])
+            
+            cur.pop()
+            backtrack(i+1, cur, total)
+            
+        backtrack(0, [], 0)
         
+        return res
+            
