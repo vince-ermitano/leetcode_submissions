@@ -43,6 +43,11 @@
 
 - Can make code simpler and easier to understand. Allows a bigger problem to be solved by breaking the problem into smaller problems.
 
+## Quick Notes:
+### Python
+- Can access key-value pairs in dictionary with .items()
+- tuples have value equality so you can compare tuples by value
+- Can loop through array in reverse order with reversed(range(len(arr)) or range(len(arr)-1, -1, -1)
 \
 \
 Collection of LeetCode questions to ace the coding interview! - Created using [LeetHub](https://github.com/QasimWani/LeetHub)
