@@ -48,6 +48,9 @@
 - Can access key-value pairs in dictionary with .items()
 - tuples have value equality so you can compare tuples by value
 - Can loop through array in reverse order with reversed(range(len(arr)) or range(len(arr)-1, -1, -1)
+- "//" is floor division
+- Can convert an array of primitives into a set with set(), e.g. numSet = set(nums)
+- The ord() function returns the number representing the unicode code of a specified character
 \
 \
 Collection of LeetCode questions to ace the coding interview! - Created using [LeetHub](https://github.com/QasimWani/LeetHub)
