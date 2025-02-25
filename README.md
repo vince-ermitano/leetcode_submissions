@@ -11,7 +11,53 @@
 - HashMap
 - Set
 
-## Algorithms
+### Stack
+- First-In Last-Out
+- Good for items that have pairs (e.g. parentheses generation/validation)
+- Good for problems that require having some kind of order
+- Uses cases:
+  - Managing function calls (call stack)
+  - Undo/Redo functionality in text editors
+  - Checking for balanced parentheses or valid expressions
+  - Depth-First Search (DFS) implementation
+  - Backtracking problems
+- Common stack problems:
+  - Valid Parentheses: Check if an expression has balanced parentheses.
+  - Next Greater Element: Find the next greater element for each item in an array.
+  - Daily Temperatures: Compute how many days you have to wait for a warmer temperature.
+  - Min Stack: A stack that can retrieve the minimum element in O(1) time.
+
+## Algorithms/Tools
+- Two Pointer
+- Binary Search
+- Topological Sort
+- Backtracking
+- Recursion
+
+### Two-Pointer Technique
+- Definition: A technique where two pointers traverse an array (or string) from different directions or at different speeds to solve a problem efficiently.
+- Use Cases:
+  - Finding pairs that meet a condition (e.g., two sum in a sorted array)
+  - Removing duplicates in-place
+  - Partitioning arrays
+  - Reversing arrays or strings
+  - Merging sorted arrays
+-Types of Two-Pointer Approaches:
+  - Opposite Ends (Left and Right Pointers)
+    - Typically used for problems involving sorted arrays or palindromes.
+    - One pointer starts at the beginning, and the other at the end.
+    - Example: Finding a pair that sums to a target.
+  - Same Direction (Slow and Fast Pointers)
+    - One pointer moves slower than the other, commonly used for linked lists or removing duplicates.
+    - Example: Detecting a cycle in a linked list.
+- Time Complexity: Usually O(n), since each element is processed at most once.
+- Opposite-end pointers are great for sorted input, while fast/slow pointers help in linked list cycle detection.
+
+
+### Binary Search
+- Algorithm that can search within a *sorted* list efficiently
+- O(log(n)) where n is the length of the list
+- Idea is to split the list in half, determine which of the two resulting lists would have the target, and continue to search within that list.
 
 ### Topological Sort
 
@@ -43,7 +89,34 @@
 
 - Can make code simpler and easier to understand. Allows a bigger problem to be solved by breaking the problem into smaller problems.
 
+### 1D Dynammic Programming
+- Dynamic Programming is a technique used to solve problems by breaking them down into overlapping subproblems and storing the results to avoid redundant calculations. 1D DP refers to problems where only a 1D array (or a single variable) is needed to store intermediate results.
+- Key Concepts:
+  - State Definition:
+    - Define dp[i] to represent a meaningful subproblem.
+    - Example: dp[i] could store the maximum profit at index i, the number of ways to reach index i, etc.
+  - Transition Formula:
+    - Find a recurrence relation to build the solution iteratively.
+    - Example: dp[i] = dp[i-1] + dp[i-2] (Fibonacci sequence).
+  - Base Case:
+    - Identify initial values needed to start the DP process.
+    - Example: dp[0] = 1, dp[1] = 1 for Fibonacci.
+  - Optimization:
+    - Sometimes, instead of storing an entire array, we can use only a few variables if the problem only requires the last few computed values.
+    - Example: dp[i] only depends on dp[i-1] and dp[i-2], so we can use two variables instead of an array.
+- Key Takeaways:
+  - 1D DP often involves iterating over an array and updating a dp[i] state.
+  - Space Optimization: If a problem only depends on the last 1-2 computed values, store only those instead of the entire DP array.
+  - Common Patterns:
+    - Subsequence problems → Compare previous elements (dp[i] = max/min(dp[i-1], …))
+    - Counting problems → Sum the ways to reach dp[i]
+    - Partitioning problems → Use dp[i] to track the best result up to i
+  - Problems include: Fibonacci, Climbing Stairs, House Robber, Coin Change, Maximum Subarray (Kadane’s Algorithm), etc.
+
 ## Quick Notes:
+### General
+- $$\frac{l + r}{2} = l + \frac{(r - l)}{2}$$ (when calculating mid-point for binary search, avoid overflow from calculating $${l+r}$$
+
 ### Python
 - Can access key-value pairs in dictionary with .items()
 - tuples have value equality so you can compare tuples by value
