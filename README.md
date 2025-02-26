@@ -26,6 +26,21 @@
   - Next Greater Element: Find the next greater element for each item in an array.
   - Daily Temperatures: Compute how many days you have to wait for a warmer temperature.
   - Min Stack: A stack that can retrieve the minimum element in O(1) time.
+  - 
+### Linked List
+- A Linked List is a linear data structure where elements (nodes) are stored in memory non-contiguously and connected via pointers. Each node contains:
+  - Value/Data
+  - Pointer/Reference to the next node (for singly linked lists)
+  - Optional: Pointer to the previous node (for doubly linked lists)
+- Types of Linked Lists:
+    - Singly Linked List (SLL) – Each node points to the next node.
+    - Doubly Linked List (DLL) – Each node points to both next and previous nodes.
+    - Circular Linked List (CLL) – The last node points back to the first node, forming a loop.
+- Key Takeaways
+  - ✅ Linked lists are useful when frequent insertions/deletions are needed.
+  - ✅ Slow & fast pointers help detect cycles, find midpoints, etc.
+  - ✅ Reversal problems typically require modifying pointers iteratively.
+  - ✅ Dummy nodes simplify head operations and edge cases.
 
 ## Algorithms/Tools
 - Two Pointer
