@@ -59,6 +59,18 @@
 - O(log(n)) where n is the length of the list
 - Idea is to split the list in half, determine which of the two resulting lists would have the target, and continue to search within that list.
 
+### Sliding Window
+
+- The Sliding Window technique is an optimized approach used for problems involving contiguous subarrays or substrings. Instead of using a brute-force O(n²) approach, it dynamically expands and contracts a "window" over the input array/string, reducing time complexity to O(n) in many cases.
+- Types of Sliding Window
+  - Fixed-Length Window
+    - The window size is pre-defined and moves in a linear fashion.
+    - Example: Finding the maximum sum of k consecutive elements.
+  - Variable-Length Window
+    - The window expands and contracts dynamically based on conditions.
+    - Example: Finding the smallest subarray with a sum >= target.
+
+
 ### Topological Sort
 
 - Algorithm that traverses a graph and produces an order of the nodes in such a way that follows the order of dependencies
