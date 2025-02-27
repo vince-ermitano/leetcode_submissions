@@ -151,6 +151,7 @@
 - "//" is floor division
 - Can convert an array of primitives into a set with set(), e.g. numSet = set(nums)
 - The ord() function returns the number representing the unicode code of a specified character
+- Can swap values between variables in one line without 'tmp' variable (e.g. left, right = right, left)
 \
 \
 Collection of LeetCode questions to ace the coding interview! - Created using [LeetHub](https://github.com/QasimWani/LeetHub)
