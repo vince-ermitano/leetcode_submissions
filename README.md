@@ -41,6 +41,22 @@
   - ✅ Slow & fast pointers help detect cycles, find midpoints, etc.
   - ✅ Reversal problems typically require modifying pointers iteratively.
   - ✅ Dummy nodes simplify head operations and edge cases.
+  
+### Binary Tree
+- Types of Binary Trees
+  - Full Binary Tree – Every node has 0 or 2 children (no single-child nodes).
+  - Complete Binary Tree – All levels are fully filled except possibly the last, which is filled from left to right.
+  - Perfect Binary Tree – All levels are completely filled.
+  - Balanced Binary Tree – Height difference between left and right subtrees is at most 1.
+  - Degenerate (Skewed) Tree – Every node has only one child (becomes like a linked list).
+ 
+### Binary Search Tree (BST)
+- A Binary Search Tree (BST) is a sorted binary tree where:
+  - The left subtree contains nodes with values less than the root.
+  - The right subtree contains nodes with values greater than the root.
+  - Each subtree follows the same BST property.
+- Balanced BSTs (e.g., AVL, Red-Black Trees) guarantee O(log n) for search, insert, and delete.
+- Unbalanced BSTs can degrade to O(n) in worst case (when the tree becomes a linked list).
 
 ## Algorithms/Tools
 - Two Pointer
@@ -152,6 +168,10 @@
 - Can convert an array of primitives into a set with set(), e.g. numSet = set(nums)
 - The ord() function returns the number representing the unicode code of a specified character
 - Can swap values between variables in one line without 'tmp' variable (e.g. left, right = right, left)
+- Python allows modifications to mutable objects (e.g. lists, dictionaries) from inner functions without requiring nonlocal
+- deque is a double-ended queue
+  - popleft()
+  - append()
 \
 \
 Collection of LeetCode questions to ace the coding interview! - Created using [LeetHub](https://github.com/QasimWani/LeetHub)
