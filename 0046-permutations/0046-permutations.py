@@ -4,24 +4,27 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[List[int]]
         """
-        permutations = []
-        n = len(nums)
+
+        res = []
+        chosen = [False for i in range(len(nums))]
+
+        print(chosen)
+
+        def backtrack(curr, chosen):
+            if len(curr) == len(nums):
+                res.append(curr[:])
+                return
+            
+            for i in range(len(nums)):
+                if not chosen[i]:
+                    curr.append(nums[i])
+                    chosen[i] = True
+                    backtrack(curr, chosen)
+
+                    curr.pop()
+                    chosen[i] = False
         
-        def backtrack(first):
-            if first == n:
-                permutations.append(list(nums))
-            for i in range(first, n):
-                temp = nums[first]
-                nums[first] = nums[i]
-                nums[i] = temp
-                
-                backtrack(first+1)
-                
-                temp = nums[first]
-                nums[first] = nums[i]
-                nums[i] = temp
-        
-        backtrack(0)
-        return permutations
-                
+        backtrack([], chosen)
+
+        return res
         
