@@ -161,6 +161,8 @@
 - $$\frac{l + r}{2} = l + \frac{(r - l)}{2}$$ (when calculating mid-point for binary search, avoid overflow from calculating $${l+r}$$
 
 ### Python
+- for i, v in enumerate(some_list)
+- .sort() sorts list in place
 - Can access key-value pairs in dictionary with .items()
 - tuples have value equality so you can compare tuples by value
 - Can loop through array in reverse order with reversed(range(len(arr)) or range(len(arr)-1, -1, -1)
