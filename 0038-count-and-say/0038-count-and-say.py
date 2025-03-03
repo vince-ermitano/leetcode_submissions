@@ -1,26 +1,17 @@
 class Solution:
     def countAndSay(self, n: int) -> str:
-
-        res = "1"
-
-        for i in range(n-1):
-            res = self.RLE(res)
+        if n == 1:
+            return "1"
         
-        return res
-            
-
-            
-    
-    def RLE(self, s):
-        left = right = 0
+        prev = self.countAndSay(n-1)
+        count = 1
         res = ""
 
-        while (left < len(s)):
-            curr = s[left]
-
-            while right < len(s) and s[right] == curr:
-                right += 1
-            
-            res += str(right - left) + curr
-            left = right
+        for i in range(len(prev)):
+            if i + 1 < len(prev) and prev[i] == prev[i+1]:
+                count += 1
+            else:
+                res += str(count) + prev[i]
+                count = 1
+        
         return res
