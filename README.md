@@ -183,6 +183,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Hash Table
 |  |
 | ------- |
+| [0621-task-scheduler](https://github.com/vince-ermitano/leetcode_submissions/tree/master/0621-task-scheduler) |
 | [0768-partition-labels](https://github.com/vince-ermitano/leetcode_submissions/tree/master/0768-partition-labels) |
 ## Two Pointers
 |  |
@@ -195,5 +196,22 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Greedy
 |  |
 | ------- |
+| [0621-task-scheduler](https://github.com/vince-ermitano/leetcode_submissions/tree/master/0621-task-scheduler) |
 | [0768-partition-labels](https://github.com/vince-ermitano/leetcode_submissions/tree/master/0768-partition-labels) |
+## Array
+|  |
+| ------- |
+| [0621-task-scheduler](https://github.com/vince-ermitano/leetcode_submissions/tree/master/0621-task-scheduler) |
+## Sorting
+|  |
+| ------- |
+| [0621-task-scheduler](https://github.com/vince-ermitano/leetcode_submissions/tree/master/0621-task-scheduler) |
+## Heap (Priority Queue)
+|  |
+| ------- |
+| [0621-task-scheduler](https://github.com/vince-ermitano/leetcode_submissions/tree/master/0621-task-scheduler) |
+## Counting
+|  |
+| ------- |
+| [0621-task-scheduler](https://github.com/vince-ermitano/leetcode_submissions/tree/master/0621-task-scheduler) |
 <!---LeetCode Topics End-->
