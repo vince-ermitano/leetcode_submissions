@@ -58,6 +58,31 @@
 - Balanced BSTs (e.g., AVL, Red-Black Trees) guarantee O(log n) for search, insert, and delete.
 - Unbalanced BSTs can degrade to O(n) in worst case (when the tree becomes a linked list).
 
+### Heaps
+- A Heap is a specialized binary tree that satisfies the heap property:
+  - Max-Heap: The value of each node is greater than or equal to its children.
+  - Min-Heap: The value of each node is less than or equal to its children.
+- Heaps are typically implemented as binary trees stored in arrays.
+
+- Heap Properties:
+  - Complete Binary Tree:
+    - All levels are fully filled except possibly the last, which is filled left to right.
+  - Heap Property:
+    - Max-Heap: Parent ≥ Children
+    - Min-Heap: Parent ≤ Children
+- Common Heap Problems:
+  - Kth Largest Element:
+    - Use a min-heap of size k.
+  - Merge K Sorted Lists:
+    - Use a min-heap for efficient merging.
+  - Top K Frequent Elements:
+    - Use a min-heap to maintain top k elements.
+- Key Takeaways:
+  - ✅ Heaps are efficient for priority-based tasks (O(log n) operations).
+  - ✅ Commonly used in shortest path (Dijkstra's) and MST (Prim's) algorithms.
+  - ✅ Efficient for problems involving frequent min/max extractions.
+  - ✅ Heap sort has O(n log n) time complexity but is not stable.
+
 ## Algorithms/Tools
 - Two Pointer
 - Binary Search
@@ -155,14 +180,42 @@
     - Counting problems → Sum the ways to reach dp[i]
     - Partitioning problems → Use dp[i] to track the best result up to i
   - Problems include: Fibonacci, Climbing Stairs, House Robber, Coin Change, Maximum Subarray (Kadane’s Algorithm), etc.
+ 
+### Greedy Algorithm
+- A Greedy Algorithm builds up a solution piece by piece, always choosing the locally optimal choice at each step with the hope that these choices lead to a globally optimal solution.
+  - Does not reconsider previous choices (no backtracking).
+  - Efficient but not always guaranteed to find the best solution for all problems.
+- Key Characteristics of Greedy Algorithms:
+  - Greedy Choice Property:
+    - A global solution can be arrived at by selecting locally optimal choices.
+  - Optimal Substructure:
+    - An optimal solution to the problem contains optimal solutions to subproblems.
+  - No Backtracking:
+    - Once a choice is made, it is not revisited.
+- When to Use Greedy Algorithms:
+  - Problems with optimal substructure and greedy choice property.
+  - Examples:
+    - Huffman Coding (data compression).
+    - Activity Selection (scheduling).
+    - Dijkstra’s Algorithm (shortest path in non-negative weighted graphs).
+    - Kruskal’s and Prim’s Algorithms (minimum spanning tree).
+    - Coin Change Problem (only if coins are in a specific denomination).
+- Key Takeaways:
+  - ✅ Greedy algorithms are efficient but not always optimal.
+  - ✅ Work best when problems have optimal substructure and greedy choice properties.
+  - ✅ Fail for complex problems like 0/1 knapsack (use DP instead).
+  - ✅ Efficient for MSTs, shortest paths in unweighted graphs, scheduling, etc.
 
 ## Quick Notes:
 ### General
 - $$\frac{l + r}{2} = l + \frac{(r - l)}{2}$$ (when calculating mid-point for binary search, avoid overflow from calculating $${l+r}$$
 
 ### Python
+- python doesn't have a built-in 'max'-heap, so use negatives values to emulate
+- for w, v in zip(weights, values)
 - for i, v in enumerate(some_list)
 - .sort() sorts list in place
+-   .sort(reverse=True) to sort in reverse
 - Can access key-value pairs in dictionary with .items()
 - tuples have value equality so you can compare tuples by value
 - Can loop through array in reverse order with reversed(range(len(arr)) or range(len(arr)-1, -1, -1)
@@ -174,6 +227,7 @@
 - deque is a double-ended queue
   - popleft()
   - append()
+- some_list.copy() (or some_list[:] in python3) and copy = copy.deepcopy(some_list)
 \
 \
 Collection of LeetCode questions to ace the coding interview! - Created using [LeetHub](https://github.com/QasimWani/LeetHub)
