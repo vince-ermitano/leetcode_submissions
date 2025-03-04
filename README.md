@@ -211,6 +211,7 @@
 - $$\frac{l + r}{2} = l + \frac{(r - l)}{2}$$ (when calculating mid-point for binary search, avoid overflow from calculating $${l+r}$$
 
 ### Python
+- difference = list(set(A) - set(B))
 - date.split('/') -> [01, 25, 2025]
 - python doesn't have a built-in 'max'-heap, so use negatives values to emulate
 - for w, v in zip(weights, values)
