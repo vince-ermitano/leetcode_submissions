@@ -1,24 +1,21 @@
 class Solution:
     def permuteUnique(self, nums: List[int]) -> List[List[int]]:
-        nums.sort()
-        chosen = [False for i in range(len(nums))]
+        counts = Counter(nums)
         res = []
-
 
         def backtrack(curr):
             if len(curr) == len(nums):
                 res.append(curr[:])
                 return
 
-            for i in range(len(nums)):
-                if chosen[i]: continue
-                if i > 0 and nums[i-1] == nums[i] and not chosen[i-1]: continue
-                
-                curr.append(nums[i])
-                chosen[i] = True
-                backtrack(curr)
-                curr.pop()
-                chosen[i] = False
-        
-        backtrack([])
+            for k, v in counts.items():
+                if v > 0:
+                    curr.append(k)
+                    counts[k] -= 1
+                    backtrack(curr)
+                    curr.pop()
+                    counts[k] += 1
+
+        backtrack([])        
+
         return res
