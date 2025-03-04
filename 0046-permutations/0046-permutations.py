@@ -6,25 +6,19 @@ class Solution(object):
         """
 
         res = []
-        chosen = [False for i in range(len(nums))]
 
-        print(chosen)
-
-        def backtrack(curr, chosen):
-            if len(curr) == len(nums):
-                res.append(curr[:])
-                return
+        def backtrack(i):
+            if i == len(nums):
+                res.append(nums[:])
             
-            for i in range(len(nums)):
-                if not chosen[i]:
-                    curr.append(nums[i])
-                    chosen[i] = True
-                    backtrack(curr, chosen)
+            for j in range(i, len(nums)):
+                nums[i], nums[j] = nums[j], nums[i]
+                backtrack(i+1)
+                nums[i], nums[j] = nums[j], nums[i]
 
-                    curr.pop()
-                    chosen[i] = False
-        
-        backtrack([], chosen)
+        backtrack(0)
 
         return res
+                
+
         
