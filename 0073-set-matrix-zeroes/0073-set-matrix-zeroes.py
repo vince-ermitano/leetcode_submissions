@@ -4,7 +4,6 @@ class Solution:
         Do not return anything, modify matrix in-place instead.
         """
         ROWS, COLS = len(matrix), len(matrix[0])
-        visited = set()
         initial_zeroes = set()
 
         for i in range(ROWS):
@@ -18,7 +17,6 @@ class Solution:
                 c < 0 or c >= COLS):
                 return
             
-            visited.add((r, c))
             matrix[r][c] = 0
 
             if (direction == 'row-left'):
