@@ -1,28 +1,19 @@
 class Solution:
     def pivotIndex(self, nums: List[int]) -> int:
-        # compute prefix sums and postfix sums for each index
-        # loop through nums and check if prefix and postfix computations
-        # at specific index are the same
+        # set prefix sum to 0 and postfix sum to sum(nums)
+        # iterate through nums and substract curr element from postfix sum
+        # then check if prefix and postfix are equal
+        # then add curr element to prefix sum
+        
+        prefix, postfix = 0, sum(nums)
 
-        prefix = []
-        postfix = []
-
-        curr = 0
-
-        for n in nums:
-            prefix.append(curr)
-            curr += n
-
-        curr = 0
-
-        for n in reversed(nums):
-            postfix.insert(0, curr)
-            curr += n
-            
         for i in range(len(nums)):
-            if prefix[i] == postfix[i]:
+            postfix -= nums[i]
+
+            if prefix == postfix:
                 return i
+            
+            prefix += nums[i]
         
         return -1
-        
 
