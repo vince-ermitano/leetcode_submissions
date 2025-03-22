@@ -5,41 +5,32 @@
 #         self.next = next
 class Solution:
     def pairSum(self, head: Optional[ListNode]) -> int:
-        # find midpoint of list
-        # build lists of first half of the values
-        # and second half of the values
-        # iterate through both lists to find max sum
+        # reverse first half of the list while finding the midpoint of the list
+        # one we hit the midpoint, iterate through the second half and the reversed first half
+        # and find largest sum
 
-        slow = head
-        fast = head.next
-        first_half = []
-        second_half = []
+        largest = 0
+        prev = None
+        curr = head
+        fast = head
 
-        while fast.next:
-            first_half.append(slow.val)
-
-            slow = slow.next
+        while fast and fast.next:
             fast = fast.next.next
 
-        first_half.append(slow.val)
-        slow = slow.next
-        
-        
-        while slow:
-            second_half.append(slow.val)
-            slow = slow.next
-        
-        print(first_half)
-        print(second_half)
+            # reverse nodes
+            next_node = curr.next
+            curr.next = prev
+            prev = curr
+            curr = next_node
 
-        max_twin_sum = float('-inf')
-        for i in range(len(first_half)):
-            max_twin_sum = max(max_twin_sum, first_half[i] + second_half[len(first_half) - 1 - i])
+        while curr:
+            largest = max(largest, curr.val + prev.val)
+            curr = curr.next
+            prev = prev.next
         
-        return max_twin_sum
+        return largest
 
-        # [5]
-        # []
+
 
 
         
