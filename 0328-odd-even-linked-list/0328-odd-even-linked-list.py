@@ -13,24 +13,14 @@ class Solution:
         odd_curr = head
         even_head = even_curr = head.next
 
-        while odd_curr and even_curr:
-            odds_next = even_curr.next
-            evens_next = None
-
-            if odds_next:
-                evens_next = odds_next.next
-
-            odd_curr.next = odds_next
-            even_curr.next = evens_next
-
-            if not odds_next and not evens_next:
-                odd_curr.next = even_head
+        while even_curr and even_curr.next:
+            odd_curr.next = even_curr.next
+            even_curr.next = even_curr.next.next
 
             odd_curr = odd_curr.next
             even_curr = even_curr.next
 
-            if odds_next and not evens_next:
-                odd_curr.next = even_head
+        odd_curr.next = even_head
 
         return head
 
