@@ -15,8 +15,6 @@ class Solution:
         for c in connections:
             adj_list[c[0]].append(c[1])
             adj_list[c[1]].append(-c[0])
-
-        print(adj_list)
         
         def dfs(curr):
             nonlocal counter, adj_list
