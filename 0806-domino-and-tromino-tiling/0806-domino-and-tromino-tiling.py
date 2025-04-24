@@ -22,16 +22,16 @@ class Solution:
         dp = [[0, 0] for c in range(n)]
         
 
-        dp[0] = [1, 1]
-        dp[1] = [2, 2]
+        dp[0] = [1, 2]
+        dp[1] = [2, 4]
 
         for c in range(2,n):
-            # explore combinations given that the previous tilings produced no gaps
-            # explore vertical domino or two horizontal dominos or either of the two valid trominos
-            dp[c][0] = dp[c-1][0] + dp[c-2][0] + dp[c-2][1] * 2
+            # explore combinations that doesn't produce gaps
+            # explore vertical domino or two horizontal dominos valid tromino
+            dp[c][0] = dp[c-1][0] + dp[c-2][0] + dp[c-2][1]
             # explore combinations given that the previous tilings produced gaps
-            # explore horizontal domino or valid tromino
-            dp[c][1] = dp[c-1][1] + dp[c-1][0]
+            # explore horizontal domino or either of the two valid trominos
+            dp[c][1] = dp[c-1][1] + dp[c-1][0] * 2
 
         return dp[n-1][0] % (10**9 + 7)
             
