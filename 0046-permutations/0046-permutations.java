@@ -1,25 +1,31 @@
 class Solution {
+    List<List<Integer>> res;
     public List<List<Integer>> permute(int[] nums) {
-        boolean[] chosen = new boolean[nums.length];
-        List<List<Integer>> res = new ArrayList<>();
-        dfs(new ArrayList<>(), nums, chosen, res);
+        res = new ArrayList<>();
+        backtrack(0, nums);
         return res;
     }
 
-    private void dfs(List<Integer> perm, int[] nums, boolean[] chosen, List<List<Integer>> res) {
-        if (perm.size() == nums.length) {
-            res.add(new ArrayList<>(perm));
+    private void backtrack(int i, int[] nums) {
+        if (i == nums.length) {
+            List<Integer> perm = new ArrayList<>();
+            for (int n : nums) {
+                perm.add(n);
+            }
+            res.add(perm);
             return;
         }
 
-        for (int i = 0; i < nums.length; i++) {
-            if (!chosen[i]) {
-                perm.add(nums[i]);
-                chosen[i] = true;
-                dfs(perm, nums, chosen, res);
-                perm.remove(perm.size() - 1);
-                chosen[i] = false;
-            }
+        for (int j = i; j < nums.length; j++) {
+            swap(nums, i, j);
+            backtrack(i+1, nums);
+            swap(nums, i, j);
         }
+    }
+
+    private void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
     }
 }
